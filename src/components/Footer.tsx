@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/logowhite.png";
 
 const Footer = () => {
