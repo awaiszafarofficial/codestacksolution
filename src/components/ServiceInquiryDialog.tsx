@@ -10,21 +10,22 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 const allServices = [
-  "Custom Software Development",
-  "Cloud Solutions",
-  "Mobile Development",
-  "Data Engineering",
-  "Cybersecurity",
-  "AI & Automation",
-  "UI/UX Design",
-  "Web Development",
-  "E-Commerce",
-  "Startup Launch Package",
-  "Enterprise Digital Transformation",
-  "Legacy System Modernization",
-  "Business Intelligence & Analytics",
-  "Full-Stack Product Development",
-  "Compliance & Security Solutions",
+  "AI Automation & Intelligent Systems",
+  "Custom AI & Software Development",
+  "SaaS Product Development",
+  "Cloud & DevOps Engineering",
+  "Data Engineering & AI Analytics",
+  "UX/UI & Product Design",
+  "Web Development & CMS",
+  "Mobile App Development",
+  "E-Commerce Development",
+  "DevOps & Infrastructure Automation",
+  "Maintenance & Support",
+  "Staff Augmentation",
+  "Cybersecurity & Compliance",
+  "API Development & Integrations",
+  "AI Consulting & Strategy",
+  "Branding & Creative Design",
 ];
 
 const resourceOptions = ["1", "2", "3", "4", "5", "6-10", "10+"];
