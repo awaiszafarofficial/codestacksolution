@@ -62,8 +62,8 @@ const Hero = () => {
             className="text-5xl md:text-7xl font-bold leading-tight mb-6 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Transforming Ideas Into{" "}
-            <span className="text-gradient-animated">Digital Excellence</span>
+            AI Systems That Run Your Business —{" "}
+            <span className="text-gradient-animated">So You Don't Have To</span>
           </h1>
 
           {/* Subheading */}
@@ -71,8 +71,7 @@ const Hero = () => {
             className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            We build cutting-edge software solutions that empower businesses to thrive in the digital age.
-            From cloud infrastructure to AI-powered applications.
+            From workflow automation to AI-driven decision systems, we build solutions that increase efficiency, cut costs, and unlock scalable growth for modern businesses.
           </p>
 
           {/* CTA Button */}

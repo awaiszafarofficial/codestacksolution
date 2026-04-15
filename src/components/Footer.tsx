@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/logowhite.png";
 
 const Footer = () => {
@@ -40,9 +40,9 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-4">
               {[
-                { icon: Twitter, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Github, href: "#" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/codestacksolution/" },
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61584920315205" },
+                { icon: Instagram, href: "https://www.instagram.com/codestacksol/" },
               ].map((social, i) => (
                 <a
                   key={i}
