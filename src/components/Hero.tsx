@@ -62,7 +62,7 @@ const Hero = () => {
             className="text-5xl md:text-7xl font-bold leading-tight mb-6 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
-            AI Systems That Run Your Business —{" "}
+            AI Systems That Run Your Business{" "}
             <span className="text-gradient-animated">So You Don't Have To</span>
           </h1>
 
