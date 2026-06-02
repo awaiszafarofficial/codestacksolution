@@ -31,12 +31,29 @@ const BlogPost = () => {
     );
   }
 
+  const renderInline = (text: string) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, idx) =>
+      part.startsWith("**") && part.endsWith("**") ? (
+        <strong key={idx} className="text-foreground font-semibold">
+          {part.slice(2, -2)}
+        </strong>
+      ) : (
+        <span key={idx}>{part}</span>
+      )
+    );
+  };
+
   const renderContent = (blocks: string[]) => {
-    return blocks.map((block, i) => {
+    const elements: JSX.Element[] = [];
+    let i = 0;
+    while (i < blocks.length) {
+      const block = blocks[i];
+
       if (block.startsWith("## ")) {
         const title = block.replace("## ", "");
         const heading = post.headings.find((h) => h.title === title);
-        return (
+        elements.push(
           <h2
             key={i}
             id={heading?.id}
@@ -45,13 +62,85 @@ const BlogPost = () => {
             {title}
           </h2>
         );
+        i++;
+        continue;
       }
-      return (
+
+      if (block.startsWith("### ")) {
+        elements.push(
+          <h3 key={i} className="text-xl md:text-2xl font-semibold text-foreground mt-8 mb-3">
+            {block.replace("### ", "")}
+          </h3>
+        );
+        i++;
+        continue;
+      }
+
+      // List grouping
+      if (/^[-*]\s/.test(block)) {
+        const items: string[] = [];
+        while (i < blocks.length && /^[-*]\s/.test(blocks[i])) {
+          items.push(blocks[i].replace(/^[-*]\s/, ""));
+          i++;
+        }
+        elements.push(
+          <ul key={`ul-${i}`} className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground text-lg">
+            {items.map((it, k) => (
+              <li key={k}>{renderInline(it)}</li>
+            ))}
+          </ul>
+        );
+        continue;
+      }
+
+      // Table: lines starting with |
+      if (block.startsWith("|")) {
+        const rows: string[] = [];
+        while (i < blocks.length && blocks[i].startsWith("|")) {
+          rows.push(blocks[i]);
+          i++;
+        }
+        const parseRow = (r: string) =>
+          r.split("|").slice(1, -1).map((c) => c.trim());
+        const headers = parseRow(rows[0]);
+        const bodyRows = rows.slice(rows[1]?.includes("---") ? 2 : 1).map(parseRow);
+        elements.push(
+          <div key={`tbl-${i}`} className="overflow-x-auto my-6 rounded-lg border border-border">
+            <table className="w-full text-left">
+              <thead className="bg-muted/40">
+                <tr>
+                  {headers.map((h, k) => (
+                    <th key={k} className="px-4 py-3 text-foreground font-semibold text-sm">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {bodyRows.map((r, k) => (
+                  <tr key={k} className="border-t border-border">
+                    {r.map((c, j) => (
+                      <td key={j} className="px-4 py-3 text-muted-foreground text-sm">
+                        {renderInline(c)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+        continue;
+      }
+
+      elements.push(
         <p key={i} className="text-muted-foreground leading-relaxed text-lg mb-6">
-          {block}
+          {renderInline(block)}
         </p>
       );
-    });
+      i++;
+    }
+    return elements;
   };
 
   return (
