@@ -90,9 +90,9 @@ const CTA = () => {
                   <Mail className="w-5 h-5" />
                   codestacksolution@gmail.com
                 </a>
-                <a href="tel:+923352222044" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <a href="tel:+923352222042" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Phone className="w-5 h-5" />
-                  +92 335 2222 044
+                  +92 335 2222 042
                 </a>
               </div>
             </div>
