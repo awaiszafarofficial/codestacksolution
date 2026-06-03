@@ -281,7 +281,7 @@ export const blogPosts: BlogPost[] = [
     date: "Mar 10, 2026",
     category: "Security",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=1200&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
     author: { name: "CodeStackSol Team", role: "Editorial" },
     headings: [
       { id: "threat-landscape", title: "The Current Threat Landscape" },
