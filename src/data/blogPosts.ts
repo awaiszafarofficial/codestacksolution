@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     title: "Ultimate Guide to Custom Software Development (Process, Cost & Benefits)",
     excerpt:
       "From process and architecture to cost ranges and best practices — the complete playbook for building custom software that scales with your business.",
-    date: "Apr 02, 2026",
+    date: "June 02, 2026",
     category: "Software Development",
     readTime: "10 min read",
     image: customSoftwareCover.url,
