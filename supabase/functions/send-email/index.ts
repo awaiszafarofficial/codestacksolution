@@ -53,7 +53,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'CodeStack <onboarding@resend.dev>',
-        to: ['codestacksolution@gmail.com'],
+        to: ['koldofstatic@gmail.com'],
         subject,
         html: htmlBody,
         reply_to: email,
