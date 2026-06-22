@@ -1,4 +1,10 @@
 import { Linkedin, Facebook, Instagram } from "lucide-react";
+
+const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.45a8.16 8.16 0 0 0 4.77 1.52V6.69h-1.84z"/>
+  </svg>
+);
 import logo from "@/assets/logowhite.png";
 
 const Footer = () => {
@@ -39,13 +45,17 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-4">
               {[
-                { icon: Linkedin, href: "https://www.linkedin.com/company/codestacksolution/" },
-                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61584920315205" },
-                { icon: Instagram, href: "https://www.instagram.com/codestacksol/" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/codestacksolution/", label: "LinkedIn" },
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61584920315205", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/codestacksol/", label: "Instagram" },
+                { icon: TiktokIcon, href: "https://www.tiktok.com/@codestacksolutions", label: "TikTok" },
               ].map((social, i) => (
                 <a
                   key={i}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
                 >
                   <social.icon className="w-5 h-5" />
