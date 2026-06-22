@@ -6,7 +6,7 @@ import member2 from "@/assets/team/member2.jpg";
 import member3 from "@/assets/team/member3.jpg";
 import member4 from "@/assets/team/member4.jpg";
 import member5 from "@/assets/team/member5.jpg";
-import member6 from "@/assets/team/member6.jpg";
+import laibaAsset from "@/assets/team/laiba-zahid.jpg.asset.json";
 
 const teamMembers = [
   { name: "Ahmed Khan", role: "CEO & Founder", image: member1, linkedin: "#" },
@@ -14,7 +14,7 @@ const teamMembers = [
   { name: "Michael Torres", role: "VP of Engineering", image: member3, linkedin: "#" },
   { name: "Anshrah Naveed", role: "Lead Designer", image: member4, linkedin: "https://www.linkedin.com/in/anshrah-naveed/" },
   { name: "Faiq Rizwan", role: "Digital Content Writer", image: member5, linkedin: "https://www.linkedin.com/in/chaudhry-faiq-rizwan-084634191/" },
-  { name: "Elena Petrova", role: "Project Manager", image: member6, linkedin: "#" },
+  { name: "Laiba Zahid", role: "Software Engineer | .NET", image: laibaAsset.url, linkedin: "https://www.linkedin.com/in/laiba-zahid-85aa841b8/" },
 ];
 
 const Team = () => {
