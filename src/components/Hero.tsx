@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useMousePosition } from "@/hooks/useMousePosition";
 import ParticlesBackground from "./ParticlesBackground";
 import ConsultationDialog from "./ConsultationDialog";
+import OrbAura from "./OrbAura";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -104,6 +105,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Orb Aura — bottom 50%, only top half visible */}
+      <OrbAura />
 
       {/* Bottom Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" style={{ zIndex: 10 }} />
