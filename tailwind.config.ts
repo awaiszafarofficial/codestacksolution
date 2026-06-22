@@ -87,22 +87,6 @@ export default {
           "0%": { opacity: "0", transform: "translateY(30px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        "orb-breathe": {
-          "0%, 100%": { transform: "scale(1)", opacity: "0.55" },
-          "50%": { transform: "scale(1.08)", opacity: "0.85" },
-        },
-        "orb-pulse": {
-          "0%, 100%": { transform: "scale(1)", opacity: "0.75" },
-          "50%": { transform: "scale(1.04)", opacity: "1" },
-        },
-        "orb-pulse-slow": {
-          "0%, 100%": { transform: "scale(1)", filter: "brightness(1)" },
-          "50%": { transform: "scale(1.03)", filter: "brightness(1.15)" },
-        },
-        "orb-spin": {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,10 +94,6 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out forwards",
-        "orb-breathe": "orb-breathe 5s ease-in-out infinite",
-        "orb-pulse": "orb-pulse 3.5s ease-in-out infinite",
-        "orb-pulse-slow": "orb-pulse-slow 6s ease-in-out infinite",
-        "orb-spin": "orb-spin 24s linear infinite",
       },
     },
   },
