@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useMousePosition } from "@/hooks/useMousePosition";
 import ParticlesBackground from "./ParticlesBackground";
 import ConsultationDialog from "./ConsultationDialog";
+import OrbAura from "./OrbAura";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
