@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 import member1 from "@/assets/team/member1.jpg";
 import member2 from "@/assets/team/member2.jpg";
-import member3 from "@/assets/team/member3.jpg";
+import amarachiAsset from "@/assets/team/amarachi-mbanta.jpg.asset.json";
 import member4 from "@/assets/team/member4.jpg";
 import member5 from "@/assets/team/member5.jpg";
 import laibaAsset from "@/assets/team/laiba-zahid.jpg.asset.json";
