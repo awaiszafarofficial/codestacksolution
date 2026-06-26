@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 import member1 from "@/assets/team/member1.jpg";
 import member2 from "@/assets/team/member2.jpg";
-import member3 from "@/assets/team/member3.jpg";
+import amarachiAsset from "@/assets/team/amarachi-mbanta.jpg.asset.json";
 import member4 from "@/assets/team/member4.jpg";
 import member5 from "@/assets/team/member5.jpg";
 import laibaAsset from "@/assets/team/laiba-zahid.jpg.asset.json";
@@ -11,7 +11,7 @@ import laibaAsset from "@/assets/team/laiba-zahid.jpg.asset.json";
 const teamMembers = [
   { name: "Ahmed Khan", role: "CEO & Founder", image: member1, linkedin: "#" },
   { name: "Sarah Lin", role: "CTO", image: member2, linkedin: "#" },
-  { name: "Michael Torres", role: "VP of Engineering", image: member3, linkedin: "#" },
+  { name: "Amarachi Mbanta", role: "VP of Engineering", image: amarachiAsset.url, linkedin: "https://www.linkedin.com/in/amarachimbanta/" },
   { name: "Anshrah Naveed", role: "Lead Designer", image: member4, linkedin: "https://www.linkedin.com/in/anshrah-naveed/" },
   { name: "Faiq Rizwan", role: "Digital Content Writer", image: member5, linkedin: "https://www.linkedin.com/in/chaudhry-faiq-rizwan-084634191/" },
   { name: "Laiba Zahid", role: "Software Engineer | .NET", image: laibaAsset.url, linkedin: "https://www.linkedin.com/in/laiba-zahid-85aa841b8/" },
