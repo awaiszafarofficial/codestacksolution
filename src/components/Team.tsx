@@ -9,7 +9,7 @@ import member5 from "@/assets/team/member5.jpg";
 import laibaAsset from "@/assets/team/laiba-zahid.jpg.asset.json";
 
 const teamMembers = [
-  { name: "Ahmed Khan", role: "CEO & Founder", image: member1, linkedin: "#" },
+  { name: "Ch-Irfan Saleem", role: "CEO & Founder", image: irfanAsset.url, linkedin: "https://www.linkedin.com/in/irfan-chaudhary-20431270/" },
   { name: "Sarah Lin", role: "CTO", image: member2, linkedin: "#" },
   { name: "Amarachi Mbanta", role: "Product Designer", image: amarachiAsset.url, linkedin: "https://www.linkedin.com/in/amarachimbanta/" },
   { name: "Anshrah Naveed", role: "Lead Designer", image: member4, linkedin: "https://www.linkedin.com/in/anshrah-naveed/" },
