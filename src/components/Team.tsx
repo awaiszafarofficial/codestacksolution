@@ -2,8 +2,8 @@ import { Linkedin } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 import irfanAsset from "@/assets/team/irfan-ceo.png.asset.json";
-import member2 from "@/assets/team/member2.jpg";
 import amarachiAsset from "@/assets/team/amarachi-mbanta.jpg.asset.json";
+import azamAsset from "@/assets/team/azam2.png.asset.json";
 import member4 from "@/assets/team/member4.jpg";
 import member5 from "@/assets/team/member5.jpg";
 import laibaAsset from "@/assets/team/laiba-zahid.jpg.asset.json";
