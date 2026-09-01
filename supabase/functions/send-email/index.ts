@@ -3,7 +3,8 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
-const RECIPIENT_EMAIL = 'codestacksolution@gmail.com';
+const RECIPIENT_EMAIL = Deno.env.get('RECIPIENT_EMAIL') ?? 'codestacksolution@gmail.com';
+const FROM_EMAIL = Deno.env.get('FROM_EMAIL') ?? 'CodeStack <onboarding@resend.dev>';
 
 const escapeHtml = (value: unknown) =>
   String(value ?? '')
@@ -85,7 +86,7 @@ Deno.serve(async (req) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'CodeStack <onboarding@resend.dev>',
+        from: FROM_EMAIL,
         to: [RECIPIENT_EMAIL],
         subject,
         html: htmlBody,

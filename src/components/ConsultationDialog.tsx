@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { submitFormEmail } from "@/lib/submitFormEmail";
 
 interface ConsultationDialogProps {
   open: boolean;
@@ -46,16 +46,12 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
 
     setSending(true);
     try {
-      const { data, error } = await supabase.functions.invoke("send-email", {
-        body: {
-          type: "consultation",
-          name: trimmedName,
-          email: trimmedEmail,
-          message: trimmedMessage,
-        },
+      await submitFormEmail({
+        type: "consultation",
+        name: trimmedName,
+        email: trimmedEmail,
+        message: trimmedMessage,
       });
-
-      if (error) throw error;
 
       onOpenChange(false);
       setFormData({ name: "", email: "", message: "" });
@@ -63,11 +59,11 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
         title: "Message sent!",
         description: "We'll get back to you within 24 hours.",
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Send email error:", err);
       toast({
         title: "Failed to send",
-        description: "Something went wrong. Please try again.",
+        description: err instanceof Error ? err.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } finally {

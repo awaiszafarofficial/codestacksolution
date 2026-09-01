@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { submitFormEmail } from "@/lib/submitFormEmail";
 
 const allServices = [
   "AI Automation & Intelligent Systems",
@@ -85,19 +85,15 @@ const ServiceInquiryDialog = ({ open, onOpenChange, selectedService }: ServiceIn
 
     setSending(true);
     try {
-      const { data, error } = await supabase.functions.invoke("send-email", {
-        body: {
-          type: "service-inquiry",
-          name: trimmedName,
-          email: trimmedEmail,
-          service: formData.service,
-          resources: formData.resources,
-          experience: formData.experience,
-          projectDetail: trimmedDetail,
-        },
+      await submitFormEmail({
+        type: "service-inquiry",
+        name: trimmedName,
+        email: trimmedEmail,
+        service: formData.service,
+        resources: formData.resources,
+        experience: formData.experience,
+        projectDetail: trimmedDetail,
       });
-
-      if (error) throw error;
 
       onOpenChange(false);
       setFormData({ name: "", email: "", projectDetail: "", resources: "", experience: "3", service: "" });
@@ -105,11 +101,11 @@ const ServiceInquiryDialog = ({ open, onOpenChange, selectedService }: ServiceIn
         title: "Inquiry submitted!",
         description: "We'll get back to you shortly.",
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Send email error:", err);
       toast({
         title: "Failed to send",
-        description: "Something went wrong. Please try again.",
+        description: err instanceof Error ? err.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } finally {

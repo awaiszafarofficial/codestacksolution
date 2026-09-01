@@ -14,7 +14,8 @@ export interface BlogPost {
   headings: { id: string; title: string }[];
 }
 
-import customSoftwareCover from "@/assets/blog_custom_software.jpg.asset.json";
+const customSoftwareCover =
+  "https://codestacksolution.lovable.app/__l5e/assets-v1/688c2a99-ca92-4f29-9de4-4a2cb02a4997/blog_custom_software_v2.jpg";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -25,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     date: "June 02, 2026",
     category: "Software Development",
     readTime: "10 min read",
-    image: customSoftwareCover.url,
+    image: customSoftwareCover,
     author: { name: "CodeStackSol Team", role: "Editorial" },
     headings: [
       { id: "what-is-custom-software-development", title: "What Is Custom Software Development?" },
