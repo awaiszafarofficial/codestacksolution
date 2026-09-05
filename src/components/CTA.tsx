@@ -74,14 +74,14 @@ const CTA = () => {
                   Schedule a Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button
+                {/* <Button
                   size="lg"
                   variant="outline"
                   className="border-primary/50 hover:bg-primary/10 text-lg px-8 py-6"
                   onClick={() => setGalleryOpen(true)}
                 >
                   View Our Work
-                </Button>
+                </Button> */}
               </div>
 
               {/* Contact Info */}
