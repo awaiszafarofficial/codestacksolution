@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 import irfan from "@/assets/team/irfan-ceo.png";
 import awais from "@/assets/team/awais-zafar.jpeg";
-import azam from "@/assets/team/azam2.png";
+// import azam from "@/assets/team/azam2.png";
 import member4 from "@/assets/team/member4.jpg";
 import member5 from "@/assets/team/member5.jpg";
 import laiba from "@/assets/team/laiba-zahid.jpg";
@@ -11,7 +11,7 @@ import laiba from "@/assets/team/laiba-zahid.jpg";
 const teamMembers = [
   { name: "Irfan Saleem", role: "CEO & Founder", image: irfan, linkedin: "https://www.linkedin.com/in/irfan-chaudhary-20431270/" },
   { name: "Awais Zafar", role: "Full Stack Developer", image: awais, linkedin: "https://www.linkedin.com/in/awaiszafarofficial/" },
-  { name: "Muhammad Azam", role: "Lead Developer", image: azam, linkedin: "https://www.linkedin.com/in/muhammad-azam-a6449322a/" },
+  // { name: "Muhammad Azam", role: "Lead Developer", image: azam, linkedin: "https://www.linkedin.com/in/muhammad-azam-a6449322a/" },
   { name: "Anshrah Naveed", role: "Lead Designer", image: member4, linkedin: "https://www.linkedin.com/in/anshrah-naveed/" },
   { name: "Faiq Rizwan", role: "Digital Content Writer", image: member5, linkedin: "https://www.linkedin.com/in/chaudhry-faiq-rizwan-084634191/" },
   { name: "Laiba Zahid", role: "Software Engineer | .NET", image: laiba, linkedin: "https://www.linkedin.com/in/laiba-zahid-85aa841b8/" },
@@ -39,10 +39,15 @@ const Team = () => {
           </p>
         </ScrollReveal>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        {/* Team Grid — last incomplete row stays centered */}
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {teamMembers.map((member, index) => (
-            <ScrollReveal key={member.name} delay={index * 80} direction="up">
+            <ScrollReveal
+              key={member.name}
+              delay={index * 80}
+              direction="up"
+              className="w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1.334rem)]"
+            >
               <div className="group relative">
                 {/* Photo */}
                 <div className="relative overflow-hidden rounded-2xl mb-4 aspect-[4/5]">
